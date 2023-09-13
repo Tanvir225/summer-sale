@@ -58,7 +58,7 @@ function productList(name, price) {
         const total = document.getElementById('total');
         const mainTotal = (totalPrice - discount).toFixed(2);
         total.innerText = mainTotal;
-    
+
     })
 
     //discount section end
@@ -68,16 +68,24 @@ function productList(name, price) {
 }
 
 
-document.getElementById('home').addEventListener('click',function () {
+document.getElementById('home').addEventListener('click', function () {
     const resetTotalPrice = document.getElementById('total-price');
-    resetTotalPrice.innerText =' 00.00'
+    resetTotalPrice.innerText = ' 00.00'
 
     const resetDiscountPrice = document.getElementById('discount');
-    resetDiscountPrice.innerText =' 00.00';
+    resetDiscountPrice.innerText = ' 00.00';
 
     const resetMainPrice = document.getElementById('total');
-    resetMainPrice.innerText =' 00.00'
+    resetMainPrice.innerText = ' 00.00'
 
     const product = document.getElementById('product-details');
     product.innerHTML = ''
+
+    const purchaseButton = document.getElementById('purchase');
+    purchaseButton.disabled  = true;
+    purchaseButton.classList.add('no-animation')
+
+    const applyButton = document.getElementById('apply');
+    applyButton.disabled = true;
+    applyButton.classList.add('no-animation')
 })
